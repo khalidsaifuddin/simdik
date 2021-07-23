@@ -15,7 +15,8 @@ import {
   BlockTitle,
   LoginScreen,
   List,
-  ListItem} from 'framework7-react';
+  ListItem,
+  AccordionContent} from 'framework7-react';
 import LoginPage from '../pages/login';
 // import {Provider} from 'react-redux';
 // import store from 'store';
@@ -172,6 +173,7 @@ class app extends Component {
                 >
               {/* <Block smartSelect strong style={{marginTop:'0px', marginBottom:'0px'}}> */}
                   <select onChange={this.gantiSemester} name="semester_id" defaultValue={localStorage.getItem('semester_id_aplikasi')}>
+                    <option value="20202">2020/2021 Genap</option>
                     <option value="20201">2020/2021 Ganjil</option>
                     <option value="20192">2019/2020 Genap</option>
                     <option value="20191">2019/2020 Ganjil</option>
@@ -192,7 +194,7 @@ class app extends Component {
                   {/* <Icon slot="media" ios="f7:house"></Icon> */}
                   <i slot="media" className="f7-icons">house</i>
                 </ListItem>
-                {localStorage.getItem('kode_aplikasi') !== 'SPM' &&
+                {localStorage.getItem('kode_aplikasi') !== 'SPM' && localStorage.getItem('sudah_login') === '1' &&
                 <ListItem noHairlines style={{background:'#E3F2FD', fontSize:'14px'}} link="/DataPokokSekolah/" view=".view-main" panelClose panel-close title="Cari Sekolah">
                   {/* <Icon slot="media" ios="f7:search"></Icon> */}
                   <i slot="media" className="f7-icons">search</i>
@@ -228,7 +230,7 @@ class app extends Component {
                   <i slot="media" className="f7-icons">chart_pie_fill</i>
                 </ListItem>
                 } */}
-                {localStorage.getItem('kode_aplikasi') === 'SIMDIK' &&
+                {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('sudah_login') === '1' &&
                 <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/Peta" view=".view-main" panelClose panel-close title="Peta">
                   {/* <Icon slot="media" ios="f7:house"></Icon> */}
                   <i slot="media" className="f7-icons">map</i>
@@ -240,7 +242,8 @@ class app extends Component {
                   <i slot="media" className="f7-icons">map</i>
                 </ListItem>
                 }
-                {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('kode_wilayah_aplikasi') === '000000' &&
+                {/* {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('kode_wilayah_aplikasi') === '000000' && */}
+                {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('sudah_login') === '1' &&
                 <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/CustomQuery/" view=".view-main" panelClose panel-close title="Custom Query">
                   {/* <Icon slot="media" ios="f7:house"></Icon> */}
                   <i slot="media" className="f7-icons">quote_bubble</i>
@@ -427,6 +430,7 @@ class app extends Component {
                 >
               {/* <Block smartSelect strong style={{marginTop:'0px', marginBottom:'0px'}}> */}
                   <select onChange={this.gantiSemester} name="semester_id" defaultValue={localStorage.getItem('semester_id_aplikasi')}>
+                    <option value="20201">2020/2021 Genap</option>
                     <option value="20201">2020/2021 Ganjil</option>
                     <option value="20192">2019/2020 Genap</option>
                     <option value="20191">2019/2020 Ganjil</option>
@@ -447,7 +451,7 @@ class app extends Component {
                   {/* <Icon slot="media" ios="f7:house"></Icon> */}
                   <i slot="media" className="f7-icons">house</i>
                 </ListItem>
-                {localStorage.getItem('kode_aplikasi') !== 'SPM' &&
+                {localStorage.getItem('kode_aplikasi') !== 'SPM' && localStorage.getItem('sudah_login') === '1' &&
                 <ListItem noHairlines style={{background:'#E3F2FD', fontSize:'14px'}} link="/DataPokokSekolah/" view=".view-main" panelClose panel-close title="Cari Sekolah">
                   {/* <Icon slot="media" ios="f7:search"></Icon> */}
                   <i slot="media" className="f7-icons">search</i>
@@ -460,13 +464,11 @@ class app extends Component {
                   <i slot="media" className="f7-icons">book</i>
                 </ListItem>
                 }
-                {localStorage.getItem('kode_aplikasi') !== 'SPM' && localStorage.getItem('sudah_login') === '1' && parseInt(JSON.parse(localStorage.getItem('user')).verified) === 1 && localStorage.getItem('jenjang_aplikasi') === '13' &&
+                {/* {localStorage.getItem('kode_aplikasi') !== 'SPM' && localStorage.getItem('sudah_login') === '1' && parseInt(JSON.parse(localStorage.getItem('user')).verified) === 1 && localStorage.getItem('jenjang_aplikasi') === '13' &&
                 <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link={"/ValidasiData/"+(JSON.parse(localStorage.getItem('user')).kode_wilayah ? JSON.parse(localStorage.getItem('user')).kode_wilayah : localStorage.getItem('id_level_wilayah_aplikasi'))+"/"+localStorage.getItem('kode_wilayah_aplikasi')} view=".view-main" panelClose panel-close title={'Validasi Data'}>
-                {/* <ListItem link={(localStorage.getItem('id_level_wilayah_aplikasi') === '0' ? "/RaporDapodik/" : (localStorage.getItem('id_level_wilayah_aplikasi') === '1' ? "/RaporDapodikProvinsi/"+localStorage.getItem('kode_wilayah_aplikasi') : "/RaporDapodikKabupaten/"+localStorage.getItem('kode_wilayah_aplikasi')))} view=".view-main" panelClose panel-close title={(localStorage.getItem('kode_aplikasi') === 'RAPORDAPODIK' ? 'Rapor Dapodik' : 'Rapor Kualitas Data')}> */}
-                  {/* <Icon slot="media" ios="f7:book"></Icon> */}
                   <i slot="media" className="f7-icons">checkmark_shield_fill</i>
                 </ListItem>
-                }
+                } */}
                 {/* {localStorage.getItem('kode_aplikasi') !== 'SPM' &&
                 <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link={"/RaporSNP/"+localStorage.getItem('id_level_wilayah_aplikasi')+"/"+localStorage.getItem('kode_wilayah_aplikasi')} view=".view-main" panelClose panel-close title="Rapor SNP">
                   <i slot="media" className="f7-icons">book</i>
@@ -483,24 +485,51 @@ class app extends Component {
                   <i slot="media" className="f7-icons">chart_pie_fill</i>
                 </ListItem>
                 } */}
-                {localStorage.getItem('kode_aplikasi') === 'SIMDIK' &&
+                {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('sudah_login') === '1' &&
                 <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/Peta" view=".view-main" panelClose panel-close title="Peta">
                   {/* <Icon slot="media" ios="f7:house"></Icon> */}
                   <i slot="media" className="f7-icons">map</i>
                 </ListItem>
                 }
                 {localStorage.getItem('kode_aplikasi') === 'RAPORDAPODIK' &&
-                <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/Peta" view=".view-main" panelClose panel-close title="Peta">
+                <ListItem noHairlines style={{background:'#E3F2FD', fontSize:'14px'}} link="/Peta" view=".view-main" panelClose panel-close title="Peta">
                   {/* <Icon slot="media" ios="f7:house"></Icon> */}
                   <i slot="media" className="f7-icons">map</i>
                 </ListItem>
                 }
-                {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('kode_wilayah_aplikasi') === '000000' &&
-                <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/CustomQuery/" view=".view-main" panelClose panel-close title="Custom Query">
-                  {/* <Icon slot="media" ios="f7:house"></Icon> */}
-                  <i slot="media" className="f7-icons">quote_bubble</i>
+                {/* {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('kode_wilayah_aplikasi') === '000000' && */}
+                {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('sudah_login') === '1' &&
+                <ListItem view=".view-main" accordionItem title="Custom Query" style={{background:'#E3F2FD', fontSize:'14px'}}>
+                  <i slot="media" className="f7-icons">cube_box</i>
+                  <AccordionContent>
+                    {localStorage.getItem('kode_aplikasi') === 'SIMDIK' &&
+                    <ListItem className="itemSub" noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/CustomQuery/" view=".view-main" panelClose panel-close title="Custom Query Sekolah">
+                      <i slot="media" className="f7-icons">quote_bubble</i>
+                    </ListItem>
+                    }
+                    {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && 
+                    <ListItem className="itemSub"  noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/CustomQueryPesertaDidik/" view=".view-main" panelClose panel-close title="Custom Query PD">
+                      <i slot="media" className="f7-icons">quote_bubble</i>
+                    </ListItem>
+                    }
+                    {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && 
+                    <ListItem className="itemSub"  noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/CustomQueryGTK/" view=".view-main" panelClose panel-close title="Custom Query GTK">
+                      <i slot="media" className="f7-icons">quote_bubble</i>
+                    </ListItem>
+                    }
+                    {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && 
+                    <ListItem className="itemSub"  noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/CustomQuerySarpras/" view=".view-main" panelClose panel-close title="Custom Query Sarpras">
+                      <i slot="media" className="f7-icons">quote_bubble</i>
+                    </ListItem>
+                    }
+                  </AccordionContent>
                 </ListItem>
                 }
+                {/* {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && 
+                <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/CustomQuerySekolah/" view=".view-main" panelClose panel-close title="Custom Query Sekolah">
+                  <i slot="media" className="f7-icons">quote_bubble</i>
+                </ListItem>
+                } */}
                 {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && localStorage.getItem('kode_wilayah_aplikasi') === '020800' &&
                 <ListItem noHairlines  style={{background:'#E3F2FD', fontSize:'14px'}} link="/formIndexPendidikan/" view=".view-main" panelClose panel-close title="Index Pendidikan">
                   {/* <Icon slot="media" ios="f7:house"></Icon> */}

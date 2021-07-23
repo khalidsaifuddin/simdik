@@ -256,7 +256,7 @@ class Beranda extends Component {
     
                     this.setState({
                         ...this.state,
-                        loading: false,
+                        // loading: false,
                         rapor_akhir: (rapor_akhir/jumlah_total).toFixed(2),
                         rapor_sekolah: (rapor_sekolah/jumlah_total).toFixed(2),
                         rapor_pd: (rapor_pd/jumlah_total).toFixed(2),
@@ -365,6 +365,7 @@ class Beranda extends Component {
                                                         }
                                         
                                                         this.setState({
+                                                            loading: false,
                                                             data: {
                                                                 ...this.state.data,
                                                                 labels: labels,
@@ -530,6 +531,12 @@ class Beranda extends Component {
     });
 
     // console.log(this.props);
+    this.props.saveLog({
+        judul_aplikasi: localStorage.getItem('judul_aplikasi'),
+        kode_wilayah_aplikasi: localStorage.getItem('kode_wilayah_aplikasi'),
+        wilayah_aplikasi: localStorage.getItem('wilayah_aplikasi'),
+        semester_id_aplikasi: localStorage.getItem('semester_id_aplikasi')
+    })
   }
 
   gantiSemester = (b) => {
@@ -652,7 +659,7 @@ class Beranda extends Component {
                     <Col width="25" tabletWidth="10">
                         <img src={localStorage.getItem('logo_aplikasi')} style={{width:'80px'}}/>
                     </Col>
-                    <Col width="75" tabletWidth="90">
+                    <Col width="50" tabletWidth="70">
                         <List style={{width:'100%',marginBottom:'0px',marginTop:'0px'}}>
                             <ListItem>
                                 <span style={{fontWeight:'bold', fontSize:'25px'}}>{localStorage.getItem('sub_judul_aplikasi')}</span>
@@ -665,6 +672,7 @@ class Beranda extends Component {
                             // onClick={this.gantiSemester}
                             >
                                 <select onChange={this.gantiSemester} name="semester_id" defaultValue={localStorage.getItem('semester_id_aplikasi')}>
+                                    <option value="20201">2020/2021 Genap</option>
                                     <option value="20201">2020/2021 Ganjil</option>
                                     <option value="20192">2019/2020 Genap</option>
                                     <option value="20191">2019/2020 Ganjil</option>
@@ -673,6 +681,11 @@ class Beranda extends Component {
                                 </select>
                             </ListItem>
                         </List>
+                    </Col>
+                    <Col width="25" tabletWidth="20">
+                        <Button raised fill>
+                            Tes
+                        </Button>
                     </Col>
                 </Row>
             </Block>
@@ -685,7 +698,7 @@ class Beranda extends Component {
                     <Col width="25" tabletWidth="10">
                         <img src={localStorage.getItem('logo_aplikasi')} style={{width:'80px'}}/>
                     </Col>
-                    <Col width="75" tabletWidth="90">
+                    <Col width="50" tabletWidth="70">
                         <List style={{width:'100%',marginBottom:'0px',marginTop:'0px'}}>
                             <ListItem>
                                 <span style={{fontWeight:'bold', fontSize:'16px'}}>{localStorage.getItem('sub_judul_aplikasi')}</span>
@@ -698,6 +711,7 @@ class Beranda extends Component {
                             // onClick={this.gantiSemester}
                             >
                                 <select onChange={this.gantiSemester} name="semester_id" defaultValue={localStorage.getItem('semester_id_aplikasi')}>
+                                    <option value="20201">2020/2021 Genap</option>
                                     <option value="20201">2020/2021 Ganjil</option>
                                     <option value="20192">2019/2020 Genap</option>
                                     <option value="20191">2019/2020 Ganjil</option>
@@ -706,6 +720,14 @@ class Beranda extends Component {
                                 </select>
                             </ListItem>
                         </List>
+                    </Col>
+                    <Col width="25" tabletWidth="20" style={{paddingLeft:'8px', paddingRight:'8px'}}>
+                        <Button style={{height:'90px', border:'1px solid #eee'}} border raised onClick={()=>window.open("http://manajemendata.sma.kemdikbud.go.id:8035/edukasi/index.php/web")}>
+                            <img style={{height:'75px', marginTop:'-4px'}} src="http://manajemendata.sma.kemdikbud.go.id:8035/edukasi/assets/img/logo_sma.png"/>
+                            <div style={{marginTop:'-25px', fontWeight:'bold'}}>
+                                Edukasi Data SMA
+                            </div>
+                        </Button>
                     </Col>
                 </Row>
             </Block>
@@ -766,7 +788,7 @@ class Beranda extends Component {
             } */}
             {localStorage.getItem('kode_aplikasi') === 'SIMDIK' &&
             <>
-            {localStorage.getItem('jenjang_aplikasi') === '13' &&
+            {/* {localStorage.getItem('jenjang_aplikasi') === '13' &&
             <Block strong style={{marginBottom:'8px', marginTop:'8px'}}>
                 <BlockTitle className="publikasiJudul">Data Publikasi Pusdatin TA. 2019/2020</BlockTitle>
                 <BlockTitle className="publikasiTanggal">Berdasarkan data tanggal 31 Desember 2019</BlockTitle>
@@ -818,7 +840,7 @@ class Beranda extends Component {
                     </Col>
                 </Row>
             </Block>
-            }
+            } */}
             <Block strong style={{marginBottom:'8px', marginTop:'8px'}}>
                 <BlockTitle className="publikasiJudul">Rekap Data Pokok Pendidikan</BlockTitle>
                 <BlockTitle className="publikasiTanggal">Berdasarkan data tanggal {moment(this.state.tanggal_rekap_terakhir).format('D')} {this.bulan[parseInt(moment(this.state.tanggal_rekap_terakhir).format('M')-1)]} {moment(this.state.tanggal_rekap_terakhir).format('YYYY')}, {moment(this.state.tanggal_rekap_terakhir).format('HH')}:{moment(this.state.tanggal_rekap_terakhir).format('mm')}</BlockTitle>
@@ -965,7 +987,7 @@ class Beranda extends Component {
                 </Row>
             </Block>
             
-            <Block strong style={{marginBottom:'8px', marginTop:'8px'}}>
+            {/* <Block strong style={{marginBottom:'8px', marginTop:'8px'}}>
                 <BlockTitle className="publikasiJudul">Grafik Index Pendidikan</BlockTitle>
                 <Line 
                     data={this.state.data} options={options}
@@ -1013,7 +1035,7 @@ class Beranda extends Component {
                         </Card>
                     </Col>
                 </Row>
-            </Block>
+            </Block> */}
             </>
             }
             {/* {localStorage.getItem('kode_aplikasi') === 'RAPORDAPODIK' &&
@@ -1584,11 +1606,11 @@ class Beranda extends Component {
                         </CardContent>
                     </Card>
                 </Col>
-                <Col width="100">
+                {/* <Col width="100">
 
                     <Block strong style={{marginTop:'8px', marginBottom:'8px'}}>
                         
-                        {/* t3s */}
+                        // tes
                         <Row>
                             <Col width="50" tabletWidth="20" style={{border:'0px solid #ccc'}}>
                                 <BlockTitle className="publikasiJudul">Rekap SD</BlockTitle>
@@ -1871,7 +1893,7 @@ class Beranda extends Component {
                         </Row>
 
                     </Block>
-                </Col>
+                </Col> */}
                 <Col width="100">
 
                     <Block strong style={{marginTop:'8px', marginBottom:'8px'}}>
@@ -1931,7 +1953,7 @@ class Beranda extends Component {
                     </Block>
                 </Col>
             </Row>
-            {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && parseInt(localStorage.getItem('sudah_login')) === 1 && localStorage.getItem('jenjang_aplikasi') === '13' &&
+            {/* {localStorage.getItem('kode_aplikasi') === 'SIMDIK' && parseInt(localStorage.getItem('sudah_login')) === 1 && localStorage.getItem('jenjang_aplikasi') === '13' &&
             <Block strong style={{marginBottom:'8px', marginTop:'8px'}}>
                 <Row noGap>
                     <Col width="100" tabletWidth="100">
@@ -1950,7 +1972,6 @@ class Beranda extends Component {
                                     borderWidth={30}
                                 />
                                 
-                                {/* <h1 style={{color:'#434343', fontSize:'30px', marginBottom:'0px'}}>{0}%</h1> */}
                                 <div style={{color:'#434343', width:'100%', textAlign:'center', marginTop:'8px'}}><b>{this.props.rekap_validasi_beranda.valid}</b> dari {this.props.rekap_validasi_beranda.total} sekolah valid</div>
                                 <br/>   
                                 <Button raised fill onClick={()=>this.$f7router.navigate(("/ValidasiData/"+(JSON.parse(localStorage.getItem('user')).kode_wilayah ? (JSON.parse(localStorage.getItem('user')).kode_wilayah.substring(0,2) === '00' ? '0' : (JSON.parse(localStorage.getItem('user')).kode_wilayah.substring(2,4) === '00' ? '1' : (JSON.parse(localStorage.getItem('user')).kode_wilayah.substring(4,6) === '00' ? '3' : '0') ) ) : localStorage.getItem('id_level_wilayah_aplikasi'))+"/"+(JSON.parse(localStorage.getItem('user')).kode_wilayah ? JSON.parse(localStorage.getItem('user')).kode_wilayah : localStorage.getItem('kode_wilayah_aplikasi'))))}>
@@ -1964,7 +1985,7 @@ class Beranda extends Component {
                     </Col>
                 </Row>
             </Block>
-            }
+            } */}
           </Page>
         )
     }
@@ -2000,7 +2021,8 @@ function mapDispatchToProps(dispatch) {
     getRekapValidasiBeranda: Actions.getRekapValidasiBeranda,
     getRekapPesertaDidikRingkasan: Actions.getRekapPesertaDidikRingkasan,
     getRekapGTKRingkasan: Actions.getRekapGTKRingkasan,
-    getIndexPendidikan: Actions.getIndexPendidikan 
+    getIndexPendidikan: Actions.getIndexPendidikan,
+    saveLog: Actions.saveLog
   }, dispatch);
 }
 

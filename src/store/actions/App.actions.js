@@ -18,6 +18,7 @@ export const GET_PENGGUNA = '[APP] GET PENGGUNA';
 export const SET_PENGGUNA = '[APP] SET PENGGUNA';
 export const BUAT_PENGGUNA = '[APP] BUAT PENGGUNA';
 export const GET_GEOJSON_BASIC = '[APP] GET GEOJSON BASIC';
+export const SAVE_LOG = '[APP] SAVE_LOG';
 
 export function updateWindowDimension()
 {
@@ -280,6 +281,22 @@ export function getGeoJsonBasic(routeParams)
         request.then((response) =>
             dispatch({
                 type   : GET_GEOJSON_BASIC,
+                payload: response.data,
+                routeParams
+            })
+        );
+}
+
+export function saveLog(routeParams)
+{
+    const request = axios.post(localStorage.getItem('api_base')+'/api/app/saveLog', {
+        ...routeParams
+    });
+
+    return (dispatch) =>
+        request.then((response) =>
+            dispatch({
+                type   : SAVE_LOG,
                 payload: response.data,
                 routeParams
             })

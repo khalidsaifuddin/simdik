@@ -91,10 +91,14 @@ import ValidasiData from '../pages/ValidasiData/ValidasiData.jsx';
 import formValidasiData from '../pages/ValidasiData/formValidasiData.jsx';
 import hasilValidasi from '../pages/ValidasiData/hasilValidasi.jsx';
 import rpp from '../pages/tmp/rpp.jsx';
-import CustomQuery from '../pages/CustomQuery.jsx';
+import CustomQuery from '../pages/CustomQuery/CustomQuery.jsx';
 import formIndexPendidikan from '../pages/IndexPendidikan/formIndexPendidikan.jsx';
 import chartIndexPendidikan from '../pages/IndexPendidikan/chartIndexPendidikan.jsx';
 import tambahIndexPendidikan from '../pages/IndexPendidikan/tambahIndexPendidikan.jsx';
+import CustomQuerySekolah from '../pages/CustomQuery/CustomQuerySekolah.jsx';
+import CustomQueryPesertaDidik from '../pages/CustomQuery/CustomQueryPesertaDidik.jsx';
+import CustomQueryGTK from '../pages/CustomQuery/CustomQueryGTK.jsx';
+import CustomQuerySarpras from '../pages/CustomQuery/CustomQuerySarpras.jsx';
 
 var routes = [
   {
@@ -306,7 +310,23 @@ var routes = [
   },
   {
     path: '/CustomQuery/',
-    component: CustomQuery,
+    component: CustomQuery
+  },
+  {
+    path: '/CustomQueryPesertaDidik/',
+    component: CustomQueryPesertaDidik
+  },
+  {
+    path: '/CustomQueryGTK/',
+    component: CustomQueryGTK
+  },
+  {
+    path: '/CustomQuerySarpras/',
+    component: CustomQuerySarpras
+  },
+  {
+    path: '/CustomQuerySekolah/',
+    component: CustomQuerySekolah,
     // keepAlive: true,
   },
   {

@@ -35,6 +35,7 @@ class SelectSemester extends Component {
                 smartSelect
                 >
                     <select onChange={this.gantiSemester} name="semester_id" defaultValue={localStorage.getItem('semester_id_aplikasi')}>
+                        <option value="20201">2020/2021 Genap</option>
                         <option value="20201">2020/2021 Ganjil</option>
                         <option value="20192">2019/2020 Genap</option>
                         <option value="20191">2019/2020 Ganjil</option>

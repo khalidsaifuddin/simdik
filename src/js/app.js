@@ -26,7 +26,7 @@ Framework7.use(Framework7React)
 //localStorage config
 localStorage.setItem('api_base','http://118.98.166.82:8883');
 // localStorage.setItem('api_base','http://api.spm.bandungkab.go.id');
-// localStorage.setItem('api_base','http://simdikapi:8888');
+localStorage.setItem('api_base','http://simdikapi:8888');
 // 
 // localStorage.setItem('wilayah_aplikasi','Kota Palembang');
 // localStorage.setItem('kode_wilayah_aplikasi','116000');
@@ -66,18 +66,18 @@ localStorage.setItem('api_base','http://118.98.166.82:8883');
 // localStorage.setItem('versi_aplikasi','2020.01.01');
 // localStorage.setItem('logo_aplikasi',"https://upload.wikimedia.org/wikipedia/commons/c/c3/Lambang_Kota_Palembang.gif");
 
-// localStorage.setItem('wilayah_aplikasi','Indonesia');
-// localStorage.setItem('kode_wilayah_aplikasi','000000');
-// localStorage.setItem('id_level_wilayah_aplikasi','0');
-// localStorage.setItem('judul_aplikasi','Mata SMA');
-// localStorage.setItem('tema_warna_aplikasi','biru-1');
-// localStorage.setItem('sub_judul_aplikasi','Aplikasi Manajemen Data Direktorat SMA');
-// localStorage.setItem('kode_aplikasi','SIMDIK');
-// localStorage.setItem('jenjang_aplikasi','13'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
-// localStorage.setItem('versi_aplikasi','2020.08');
-// localStorage.setItem('semester_id_aplikasi','20201'); 
-// localStorage.setItem('logo_aplikasi',"https://www.kemdikbud.go.id/main/files/large/83790f2b43f00be");
-// localStorage.setItem('harus_login', "Y");
+localStorage.setItem('wilayah_aplikasi','Indonesia');
+localStorage.setItem('kode_wilayah_aplikasi','000000');
+localStorage.setItem('id_level_wilayah_aplikasi','0');
+localStorage.setItem('judul_aplikasi','Mata SMA');
+localStorage.setItem('tema_warna_aplikasi','biru-1');
+localStorage.setItem('sub_judul_aplikasi','Aplikasi Manajemen Data Direktorat SMA');
+localStorage.setItem('kode_aplikasi','SIMDIK');
+localStorage.setItem('jenjang_aplikasi','13'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
+localStorage.setItem('versi_aplikasi','2021.07');
+localStorage.setItem('semester_id_aplikasi','20202'); 
+localStorage.setItem('logo_aplikasi',"https://www.kemdikbud.go.id/main/files/large/83790f2b43f00be");
+localStorage.setItem('harus_login', "N");
 
 // localStorage.setItem('judul_aplikasi','Sirada Lumajang');
 // localStorage.setItem('judul_aplikasi_panjang','Sistem Rapor Dapodik Kab.Lumajang');
@@ -89,26 +89,27 @@ localStorage.setItem('api_base','http://118.98.166.82:8883');
 // localStorage.setItem('kode_wilayah_aplikasi','052100');
 // localStorage.setItem('id_level_wilayah_aplikasi','2');
 // localStorage.setItem('jenjang_aplikasi','5-6-13-15-29'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
-// localStorage.setItem('semester_id_aplikasi','20182'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
+// localStorage.setItem('semester_id_aplikasi','20201'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
 // localStorage.setItem('logo_aplikasi', "https://upload.wikimedia.org/wikipedia/commons/f/f4/Lambang_Kabupaten_Lumajang.png");
+// localStorage.setItem('harus_login', "N");
 
 // // 020800  
-localStorage.setItem('judul_aplikasi','Sadetik Kab.Bandung');
-localStorage.setItem('sub_judul_aplikasi','Sabilulungan Data dan Statistik Pendidikan Kabupaten Bandung');
-localStorage.setItem('kode_aplikasi','SIMDIK');
-localStorage.setItem('tema_warna_aplikasi','biru-1');
-// localStorage.setItem('kode_aplikasi','RAPORDAPODIK');
-localStorage.setItem('kode_aplikasi','SIMDIK');
-localStorage.setItem('wilayah_aplikasi','Kab. Bandung');
-localStorage.setItem('kode_wilayah_aplikasi','020800');
-localStorage.setItem('id_level_wilayah_aplikasi','2');
-localStorage.setItem('jenjang_aplikasi','5-6-13-15-29-1-2-3-4-7-8-14-26-27-40'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
-localStorage.setItem('semester_id_aplikasi','20201'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
-localStorage.setItem('versi_aplikasi','2020.01.01');
-// localStorage.setItem('logo_aplikasi', "/static/icons/logo.png");
-localStorage.setItem('logo_aplikasi', "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lambang_Kabupaten_Bandung%2C_Jawa_Barat%2C_Indonesia.svg/1200px-Lambang_Kabupaten_Bandung%2C_Jawa_Barat%2C_Indonesia.svg.png");
-localStorage.setItem('logo_aplikasi_2', "static/icons/logo.png");
-localStorage.setItem('harus_login', "N");
+// localStorage.setItem('judul_aplikasi','Sadetik Kab.Bandung');
+// localStorage.setItem('sub_judul_aplikasi','Sabilulungan Data dan Statistik Pendidikan Kabupaten Bandung');
+// localStorage.setItem('kode_aplikasi','SIMDIK');
+// localStorage.setItem('tema_warna_aplikasi','biru-1');
+// // localStorage.setItem('kode_aplikasi','RAPORDAPODIK');
+// localStorage.setItem('kode_aplikasi','SIMDIK');
+// localStorage.setItem('wilayah_aplikasi','Kab. Bandung');
+// localStorage.setItem('kode_wilayah_aplikasi','020800');
+// localStorage.setItem('id_level_wilayah_aplikasi','2');
+// localStorage.setItem('jenjang_aplikasi','5-6-13-15-29-1-2-3-4-7-8-14-26-27-40'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
+// localStorage.setItem('semester_id_aplikasi','20201'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
+// localStorage.setItem('versi_aplikasi','2020.01.01');
+// // localStorage.setItem('logo_aplikasi', "/static/icons/logo.png");
+// localStorage.setItem('logo_aplikasi', "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lambang_Kabupaten_Bandung%2C_Jawa_Barat%2C_Indonesia.svg/1200px-Lambang_Kabupaten_Bandung%2C_Jawa_Barat%2C_Indonesia.svg.png");
+// localStorage.setItem('logo_aplikasi_2', "static/icons/logo.png");
+// localStorage.setItem('harus_login', "N");
 
 // localStorage.setItem('judul_aplikasi','SPM Kab. Bandung');
 // localStorage.setItem('judul_aplikasi_panjang','SPM Pendidikan Kab. Bandung');
@@ -124,7 +125,7 @@ localStorage.setItem('harus_login', "N");
 // localStorage.setItem('logo_aplikasi', "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Lambang_Kabupaten_Bandung%2C_Jawa_Barat%2C_Indonesia.svg/1200px-Lambang_Kabupaten_Bandung%2C_Jawa_Barat%2C_Indonesia.svg.png");
 
 
-// // 026100
+// // // 026100
 // localStorage.setItem('judul_aplikasi','Simdik Bogor');
 // localStorage.setItem('sub_judul_aplikasi','Dinas Pendidikan Kota Bogor');
 // localStorage.setItem('kode_aplikasi','SIMDIK');
@@ -134,10 +135,11 @@ localStorage.setItem('harus_login', "N");
 // localStorage.setItem('wilayah_aplikasi','Kota Bogor');
 // localStorage.setItem('kode_wilayah_aplikasi','026100');
 // localStorage.setItem('id_level_wilayah_aplikasi','2');
-// localStorage.setItem('jenjang_aplikasi','5-6-13-15-29'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
-// localStorage.setItem('semester_id_aplikasi','20191'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
-// localStorage.setItem('versi_aplikasi','2020.02.01');
+// localStorage.setItem('jenjang_aplikasi','5-6-13-15-29-1-2-3-4-7-8-14-26-27-40'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
+// localStorage.setItem('semester_id_aplikasi','20192'); // 5=SD, 6=SMP, 13=SMA, 15=SMK, 29=SLB, 1=PAUD
+// localStorage.setItem('versi_aplikasi','2021.05.01');
 // localStorage.setItem('logo_aplikasi',"https://kotabogor.go.id/uploads/images/logokotabogor.gif");
+// localStorage.setItem('harus_login', "N");
 
 
 // // 040000
